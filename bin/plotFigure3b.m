@@ -3911,6 +3911,30 @@ Ab = [
 -1 -1 -1  -0.980099;
 ];
 plotregion(-Ab(:,1:3),-Ab(:,4),[],[],'w');
+hold on;
+
+time_step = 300;
+sample_size = 100;
+color = ['y','m','c','r','g','b','w','k'];
+
+for l=1:sample_size
+
+i = [0.79 + 0.01*rand,0.19+0.01*rand,0];
+v = i;
+culm = i;
+
+for k = 1:time_step
+  s = v(1);
+  i = v(2);
+  r = v(3);
+  v = [s - (0.34*s*i)*0.5, i + (0.34*s*i - 0.05*i)*0.5, r + (0.05*i)*0.5];
+  culm = [culm;v];
+ end
+str = strcat(color(randi(8)), '-');
+plot3(culm(:,1),culm(:,2),culm(:,3),str);
+
+end
+
 xlabel('s');
 ylabel('i');
 zlabel('r');
