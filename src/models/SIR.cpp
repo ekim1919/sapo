@@ -6,6 +6,8 @@
  * @version 0.1
  */
 
+#define DEFAULT 0
+
 #include "SIR.h"
 
  SIR::SIR(bool box){
@@ -37,11 +39,18 @@
      int num_temps = 1;		// number of bundle templates
 
      // Directions matrix
-     vector< double > Li (dim_sys,0);
+     vector< double > Li (dim_sys,0); //Initialze with 0
      vector< vector< double > > L (num_dirs,Li);
+
+     #if DEFAULT
+     L[0][0] = 1;  // [1 0 0 ]^T
+     L[1][1] = 1; // [0 1 0 ]^T
+     L[2][2] = 1; // [0 0 1 ]^T
+     #else
      L[0][0] = 1;
      L[1][1] = 1;
-     L[2][2] = 1;
+     L[2][2] = 1; L[2][1] = 1; L[2][0] = -1;
+     #endif
 
      // Template matrix
      vector< int > Ti (dim_sys,0);
@@ -52,8 +61,8 @@
      // Offsets for the set of initial conditions
      vector< double > offp (num_dirs,0);
      vector< double > offm (num_dirs,0);
-     offp[0] = 0.8; offm[0] = -0.79;
-     offp[1] = 0.2; offm[1] = -0.19;
+     offp[0] = 0.8; offm[0] = -0.77;
+     offp[1] = 0.2; offm[1] = -0.17;
      offp[2] = 0.0001; offm[2] = -0.000099;
 
      B = new Bundle(L,offp,offm,T);
@@ -67,8 +76,8 @@
    L[0][0] = 1;
    L[1][1] = 1;
    L[2][2] = 1;
-   L[3][0] = 1; L[3][1] = 0.5;
-   L[4][0] = 0.5; L[4][2] = 0.5;
+   L[3][0] = 1; L[3][1] = 1;
+   L[4][0] = 1; L[4][2] = 1;
 
    // Template matrix
    vector< int > Ti (dim_sys,0);
@@ -80,8 +89,8 @@
    // Offsets for the set of initial conditions
    vector< double > offp (num_dirs,0);
    vector< double > offm (num_dirs,0);
-   offp[0] = 0.8; offm[0] = -0.79;
-   offp[1] = 0.2; offm[1] = -0.19;
+   offp[0] = 0.8; offm[0] = -0.77;
+   offp[1] = 0.2; offm[1] = -0.17;
    offp[2] = 0.0001; offm[2] = -0.000099;
    offp[3] = 1; offm[3] = 0;
    offp[4] = 1; offm[4] = 0;

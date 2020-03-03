@@ -35,13 +35,13 @@ int main(int argc,char** argv){
   //options.alpha = 0.5;		// Weight for bundle size/orthgonal proximity
   options.verbose = false;
 
-
+/*
   cout<<"TABLE 1"<<endl;
   // Load modles
   vector< Model* > reach_models;
   vector< int > reach_steps;
   reach_models.push_back(new VanDerPol());      reach_steps.push_back(300);
-  reach_models.push_back(new Rossler());        reach_steps.push_back(250);
+  reach_models.push_back(new Rossler());        reach_steps.push_back(250);sir3a
   reach_models.push_back(new SIR(false));       reach_steps.push_back(300);
   reach_models.push_back(new LotkaVolterra());  reach_steps.push_back(500);
   reach_models.push_back(new Phosphorelay());   reach_steps.push_back(200);
@@ -56,7 +56,7 @@ int main(int argc,char** argv){
     Flowpipe* flowpipe = sapo->reach(reach_models[i]->getReachSet(),reach_steps[i]);	// reachability analysis
   }
   cout<<"\n";
-
+*/
 
   cout<<"TABLE 2"<<endl;
   // Load models
@@ -74,7 +74,32 @@ int main(int argc,char** argv){
     LinearSystemSet *synth_parameter_set = sapo->synthesize(synth_models[i]->getReachSet(),synth_models[i]->getParaSet(),synth_models[i]->getSpec());	// parameter synthesis
   }
   cout<<"\n";
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
+  cout<<"FIGURE 5"<<endl;
+  Model* copter = new Quadcopter(true);
+  Sapo *sapo5 = new Sapo(copter,options);
 
+  // Compute reach set with box template
+  cout<<"Model: "<<copter->getName()<<"\tReach steps: 300\t";
+  Flowpipe* flowpipe5 = sapo5->reach(copter->getReachSet(),300);
+
+  // Generate matlab script to plot flowpipe
+  char fig3a[] = "plotFigure3a.m";
+  flowpipe3a->plotRegionToFile(fig5,'w');
+  // Set picture appearence
+  ofstream matlab_script;
+  matlab_script.open (fig5, ios_base::app);
+  matlab_script<<"xlabel('s');\n";
+  matlab_script<<"ylabel('i');\n";
+  matlab_script<<"zlabel('r');\n";
+  matlab_script<<"axis([0 1 0 0.7 0 0.8]);\n";
+  matlab_script<<"view([74 23]);\n";
+  matlab_script<<"grid on;";
+  matlab_script.close();
+  cout<<fig5<<" generated\n"<<endl;
+*/
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   cout<<"FIGURE 3a"<<endl;
   Model* sir3a = new SIR(true);
@@ -122,7 +147,7 @@ int main(int argc,char** argv){
   matlab_script.close();
   cout<<fig3b<<" generated\n"<<endl;
 
-
+/*
   cout<<"FIGURE 4a"<<endl;
   Model *sirp = new SIRp();
   Sapo *sapo_synth = new Sapo(sirp,options);
@@ -165,6 +190,6 @@ int main(int argc,char** argv){
   matlab_script<<"grid on;";
   matlab_script.close();
   cout<<fig4b<<" generated"<<endl;
-
+*/
   exit(EXIT_SUCCESS);
 }

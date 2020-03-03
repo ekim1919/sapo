@@ -1,0 +1,6 @@
+#! /bin/bash
+
+make
+rm bin/*.m
+bin/sapo
+mv *.m bin
