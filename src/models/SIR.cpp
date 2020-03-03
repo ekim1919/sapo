@@ -49,7 +49,7 @@
      #else
      L[0][0] = 1;
      L[1][1] = 1;
-     L[2][2] = 1; L[2][1] = 1; L[2][0] = -1;
+     L[2][2] = 1; L[2][0] = 1;
      #endif
 
      // Template matrix
@@ -61,8 +61,8 @@
      // Offsets for the set of initial conditions
      vector< double > offp (num_dirs,0);
      vector< double > offm (num_dirs,0);
-     offp[0] = 0.8; offm[0] = -0.77;
-     offp[1] = 0.2; offm[1] = -0.17;
+     offp[0] = 0.8; offm[0] = -0.79;
+     offp[1] = 0.2; offm[1] = -0.19;
      offp[2] = 0.0001; offm[2] = -0.000099;
 
      B = new Bundle(L,offp,offm,T);
@@ -73,11 +73,20 @@
    // Directions matrix
    vector< double > Li (dim_sys,0);
    vector< vector< double > > L (num_dirs,Li);
+
+   #if DEFAULT
    L[0][0] = 1;
    L[1][1] = 1;
    L[2][2] = 1;
    L[3][0] = 1; L[3][1] = 1;
    L[4][0] = 1; L[4][2] = 1;
+   #else
+   L[0][0] = 1;
+   L[1][1] = 1;
+   L[2][2] = 1;
+   L[3][0] = 1; L[3][1] = -1;  L[3][2] = 1;
+   L[4][0] = 1; L[4][2] = 1;   L[4][1] = 1;
+   #endif
 
    // Template matrix
    vector< int > Ti (dim_sys,0);
@@ -89,8 +98,8 @@
    // Offsets for the set of initial conditions
    vector< double > offp (num_dirs,0);
    vector< double > offm (num_dirs,0);
-   offp[0] = 0.8; offm[0] = -0.77;
-   offp[1] = 0.2; offm[1] = -0.17;
+   offp[0] = 0.8; offm[0] = -0.79;
+   offp[1] = 0.2; offm[1] = -0.19;
    offp[2] = 0.0001; offm[2] = -0.000099;
    offp[3] = 1; offm[3] = 0;
    offp[4] = 1; offm[4] = 0;
