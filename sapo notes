@@ -1,0 +1,7 @@
+Ordering Useful/Useless template directions:
+
+-Feed trajectories/ Spits out template directions (ordering by usefulness)
+- Baseline: Random directions/Sapo-given directions
+    - Is the price for our directions proportional to benefit that we get?
+    - Framework: Reprogramming in Python. 
+    -

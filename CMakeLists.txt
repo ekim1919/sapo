@@ -12,7 +12,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ./bin)
 
 add_executable(sapo ${SOURCES})
 
-set(CMAKE_CXX_FLAGS "-O2")
+set(CMAKE_CXX_FLAGS "-O2 -I/usr/local/include")
 
 target_compile_features(sapo PRIVATE cxx_range_for)
 target_link_libraries(sapo ${PROJECT_LINK_LIBS} )

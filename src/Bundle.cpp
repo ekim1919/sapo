@@ -146,7 +146,8 @@ Bundle::Bundle(vector< vector< double > > L, vector< double > offp, vector< doub
  *
  * @returns polytope represented by a linear system
  */
-LinearSystem* Bundle::getBundle(){
+
+LinearSystem* Bundle::getBundle(){ //
 	vector< vector< double> > A;
 	vector< double> b;
 	for(int i=0; i<this->getSize(); i++){
@@ -155,7 +156,7 @@ LinearSystem* Bundle::getBundle(){
 	}
 	for(int i=0; i<this->getSize(); i++){
 		A.push_back(this->negate(this->L[i]));
-		b.push_back(this->offm[i]);
+		b.push_back(this->offm[i]); //Dump all constaints for overapproximation.
 	}
 
 	LinearSystem* Ab = new LinearSystem(A,b);
@@ -169,6 +170,7 @@ LinearSystem* Bundle::getBundle(){
  * @param[in] i parallelotope index to fetch
  * @returns i-th parallelotope
  */
+
 Parallelotope* Bundle::getParallelotope(int i){
 
 	if( i<0 || i>this->T.size() ){
@@ -183,11 +185,13 @@ Parallelotope* Bundle::getParallelotope(int i){
 	for(int j=0; j<this->getDim(); j++){
 		Lambda.push_back(this->L[this->T[i][j]]);
 		d.push_back(this->offp[this->T[i][j]]);
+		//cout << this->offp[this->T[i][j]] << "\n";
 	}
 	// lower facets
 	for(int j=0; j<this->getDim(); j++){
 		Lambda.push_back(this->negate(this->L[this->T[i][j]]));
 		d.push_back(this->offm[this->T[i][j]]);
+		//cout << this->offm[this->T[i][j]] << "\n";
 	}
 
 	LinearSystem *Lambdad = new LinearSystem(Lambda,d);
@@ -329,7 +333,6 @@ Bundle* Bundle::transform(lst vars, lst f, map< vector<int>,pair<lst,lst> > &con
 
 			lst actbernCoeffs;
 
-
 			if( controlPts.count(key) == 0 || (!controlPts[key].first.is_equal(genFun)) ){	// check if the coefficients were already computed
 
 				// the combination parallelotope/direction to bound is not present in hash table
@@ -337,17 +340,23 @@ Bundle* Bundle::transform(lst vars, lst f, map< vector<int>,pair<lst,lst> > &con
 				lst sub, fog;
 
 				for(int k=0; k<(signed)vars.nops(); k++){
-					sub.append(vars[k] == genFun[k]);
+					sub.append(vars[k] == genFun[k]); //Subsitution from generator functions. Each variable is subsituted with
+					//cout << sub[k] << '\n';
 				}
+
 				for(int k=0; k<(signed)vars.nops(); k++){
 					fog.append(f[k].subs(sub));
+					//cout << fog[k] << '\n';
 				}
 
 				ex Lfog; Lfog = 0;
 				// upper facets
 				for(int k=0; k<this->getDim(); k++){
-					Lfog = Lfog + this->L[dirs_to_bound[j]][k]*fog[k];
+					Lfog = Lfog + this->L[dirs_to_bound[j]][k]*fog[k]; //Dot product between f and \Lambda_i
 				}
+
+				// 1. Figure out the transformation in Sapo. Exact transformation to each
+				// 2.
 
 				BaseConverter *BC = new BaseConverter(this->vars[1],Lfog);
 				actbernCoeffs = BC->getBernCoeffsMatrix();
@@ -355,7 +364,8 @@ Bundle* Bundle::transform(lst vars, lst f, map< vector<int>,pair<lst,lst> > &con
 				pair<lst,lst> element (genFun,actbernCoeffs);
 				controlPts[key] = element;	// store the computed coefficients
 
-			}else{
+			} else {
+				//cout << "Already computed \n";
 				actbernCoeffs = controlPts[key].second;
 			}
 
@@ -363,16 +373,20 @@ Bundle* Bundle::transform(lst vars, lst f, map< vector<int>,pair<lst,lst> > &con
 			double maxCoeffp = -DBL_MAX;
 			double maxCoeffm = -DBL_MAX;
 			for (lst::const_iterator c = actbernCoeffs.begin(); c != actbernCoeffs.end(); ++c){
-				double actCoeffp = ex_to<numeric>((*c).subs(subParatope)).to_double();
-				double actCoeffm = ex_to<numeric>((-(*c)).subs(subParatope)).to_double();
+				double actCoeffp = ex_to<numeric>((*c).subs(subParatope)).to_double(); //substitute versor lengths and base vertices into Bernstein expression.
+				double actCoeffm = ex_to<numeric>((-(*c)).subs(subParatope)).to_double(); //For negative case
 				maxCoeffp = max(maxCoeffp,actCoeffp);
 				maxCoeffm = max(maxCoeffm,actCoeffm);
 			}
-			newDp[dirs_to_bound[j]] = min(newDp[dirs_to_bound[j]],maxCoeffp);
-			newDm[dirs_to_bound[j]] = min(newDm[dirs_to_bound[j]],maxCoeffm);
+
+			//cout << "For: " << dirs_to_bound[j] << "  Bernstein Comp :Max:" << maxCoeffp << " ,  Min: " << maxCoeffm << "\n";
+
+			newDp[dirs_to_bound[j]] = min(newDp[dirs_to_bound[j]],maxCoeffp); //Take maximum computed offset
+			newDm[dirs_to_bound[j]] = min(newDm[dirs_to_bound[j]],maxCoeffm); //for both offp offu
 		}
 	}
 
+  cout << "New Offu: " << newDp[1] << " New Offp  = " << newDm[1] << '\n';
 	Bundle *res = new Bundle(this->vars,this->L,newDp,newDm,this->T);
 	if(mode == 0){
 		res = res->canonize();
@@ -454,9 +468,10 @@ Bundle* Bundle::transform(lst vars, lst params, lst f, LinearSystem *paraSet, ma
 				ex Lfog; Lfog = 0;
 				// upper facets
 				for(int k=0; k<this->getDim(); k++){
-					Lfog = Lfog + this->L[dirs_to_bound[j]][k]*fog[k];
+					Lfog = Lfog + this->L[dirs_to_bound[j]][k]*fog[k]; //My notes:Convert polynomial
 				}
 
+				cout << "Polynomial:  " << Lfog;
 				BaseConverter *BC = new BaseConverter(this->vars[1],Lfog);
 				actbernCoeffs = BC->getBernCoeffsMatrix();
 
@@ -476,10 +491,11 @@ Bundle* Bundle::transform(lst vars, lst params, lst f, LinearSystem *paraSet, ma
 				maxCoeffp = max(maxCoeffp,paraSet->maxLinearSystem(params,paraBernCoeff));
 				maxCoeffm = max(maxCoeffm,paraSet->maxLinearSystem(params,-paraBernCoeff));
 			}
-			newDp[dirs_to_bound[j]] = min(newDp[dirs_to_bound[j]],maxCoeffp);
-			newDm[dirs_to_bound[j]]  = min(newDm[dirs_to_bound[j]],maxCoeffm);
+			newDp[dirs_to_bound[j]] = min(newDp[dirs_to_bound[j]], maxCoeffp);
+			newDm[dirs_to_bound[j]] = min(newDm[dirs_to_bound[j]], maxCoeffm);
 		}
 	}
+
 
 	Bundle *res = new Bundle(this->vars,this->L,newDp,newDm,this->T);
 	if(mode == 0){

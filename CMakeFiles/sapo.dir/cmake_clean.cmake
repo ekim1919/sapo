@@ -15,8 +15,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/sapo.dir/src/Sapo.cpp.o"
   "CMakeFiles/sapo.dir/src/VarsGenerator.cpp.o"
   "CMakeFiles/sapo.dir/src/main.cpp.o"
+  "CMakeFiles/sapo.dir/src/models/BestFit.cpp.o"
   "CMakeFiles/sapo.dir/src/models/Ebola.cpp.o"
   "CMakeFiles/sapo.dir/src/models/Influenza.cpp.o"
+  "CMakeFiles/sapo.dir/src/models/LL.cpp.o"
   "CMakeFiles/sapo.dir/src/models/LotkaVolterra.cpp.o"
   "CMakeFiles/sapo.dir/src/models/Phosphorelay.cpp.o"
   "CMakeFiles/sapo.dir/src/models/Quadcopter.cpp.o"
@@ -24,8 +26,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/sapo.dir/src/models/SIR.cpp.o"
   "CMakeFiles/sapo.dir/src/models/SIRp.cpp.o"
   "CMakeFiles/sapo.dir/src/models/VanDerPol.cpp.o"
-  "bin/sapo.pdb"
   "bin/sapo"
+  "bin/sapo.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

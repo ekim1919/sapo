@@ -223,16 +223,16 @@ double LinearSystem::solveLinearSystem(vector< vector< double > > A, vector< dou
 	}
 
 	glp_add_cols(lp, num_cols);
-	for(int i=0; i<num_cols; i++){
+	for(int i=0; i<num_cols; i++) {
 		glp_set_col_bnds(lp, i+1, GLP_FR, 0.0, 0.0);
 	}
 
-	for(int i=0; i<num_cols; i++){
+	for(int i=0; i<num_cols; i++) {
 		glp_set_obj_coef(lp, i+1, obj_fun[i]);
 	}
 
 	int k=1;
-	for(int i=0; i<num_rows; i++){
+	for(int i=0; i<num_rows; i++) {
 		for(int j=0; j<num_cols; j++){
 			ia[k] = i+1, ja[k] = j+1, ar[k] = A[i][j]; /* a[i+1,j+1] = A[i][j] */
 			k++;
@@ -418,7 +418,7 @@ void LinearSystem::print(){
 /**
  * Print the linear system in Matlab format (for plotregion script)
  */
-void LinearSystem::plotRegion(){
+void LinearSystem::plotRegion() {
 
 	if(this->dim() > 3){
 		cout<<"LinearSystem::plotRegion : maximum 3d sets are allowed";
@@ -531,4 +531,3 @@ void LinearSystem::plotRegion(vector<int> rows, vector<int> cols){
 LinearSystem::~LinearSystem() {
 	// TODO Auto-generated destructor stub
 }
-

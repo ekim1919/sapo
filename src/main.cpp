@@ -1,10 +1,18 @@
 /**
+ *
  * @file main.cpp
  * main: This main file reproduces the experiments reported in "Sapo: Reachability Computation and Parameter Synthesis of Polynomial Dynamical Systems"
  *
  * @author Tommaso Dreossi <tommasodreossi@berkeley.edu>
  * @version 0.1
+ *
  */
+
+#define PHOS 0
+#define SIRF 0
+#define LKF 0
+#define QUADF 0
+#define ROSSLERF 1
 
 #include <stdio.h>
 #include <iostream>
@@ -19,6 +27,7 @@
 #include "LotkaVolterra.h"
 #include "Phosphorelay.h"
 #include "Quadcopter.h"
+#include "LL.h"
 
 #include "SIRp.h"
 #include "Influenza.h"
@@ -26,26 +35,27 @@
 
 using namespace std;
 
-int main(int argc,char** argv){
+int main(int argc, char** argv) {
 
   // Sapo's options
   sapo_opt options;
-  options.trans = 1;			 // Set transformation (0=OFO, 1=AFO)
+  options.trans = 0;			 // Set transformation (0=OFO, 1=AFO)
   options.decomp = 0;			  // Template decomposition (0=no, 1=yes)
   //options.alpha = 0.5;		// Weight for bundle size/orthgonal proximity
   options.verbose = false;
 
-/*
+
   cout<<"TABLE 1"<<endl;
   // Load modles
   vector< Model* > reach_models;
   vector< int > reach_steps;
-  reach_models.push_back(new VanDerPol());      reach_steps.push_back(300);
-  reach_models.push_back(new Rossler());        reach_steps.push_back(250);sir3a
-  reach_models.push_back(new SIR(false));       reach_steps.push_back(300);
-  reach_models.push_back(new LotkaVolterra());  reach_steps.push_back(500);
-  reach_models.push_back(new Phosphorelay());   reach_steps.push_back(200);
-  reach_models.push_back(new Quadcopter());     reach_steps.push_back(300);
+  //reach_models.push_back(new VanDerPol());      reach_steps.push_back(300);
+  //reach_models.push_back(new Rossler());        reach_steps.push_back(300);
+  //reach_models.push_back(new SIR(true));        reach_steps.push_back(300);
+  //reach_models.push_back(new LotkaVolterra());  reach_steps.push_back(300);
+  //reach_models.push_back(new Phosphorelay());   reach_steps.push_back(300);
+  //reach_models.push_back(new Quadcopter());     reach_steps.push_back(300);
+  //reach_models.push_back(new LL());               reach_steps.push_back(300);
 
   // Compute reach sets
   for(int i=0; i<reach_models.size(); i++){
@@ -53,11 +63,11 @@ int main(int argc,char** argv){
     cout<<"Model: "<<reach_models[i]->getName()<<"\tReach steps: "<<reach_steps[i]<<"\t";
 
     Sapo *sapo = new Sapo(reach_models[i],options);
-    Flowpipe* flowpipe = sapo->reach(reach_models[i]->getReachSet(),reach_steps[i]);	// reachability analysis
-  }
+    Flowpipe* flowpipe = sapo->reach(reach_models[i]->getReachSet(),reach_steps[i]);
+  }	// reachability analysis
   cout<<"\n";
-*/
 
+/*
   cout<<"TABLE 2"<<endl;
   // Load models
   vector< Model* > synth_models;
@@ -70,37 +80,136 @@ int main(int argc,char** argv){
 
     cout<<"Model: "<<synth_models[i]->getName()<<"\t";
 
-    Sapo *sapo = new Sapo(synth_models[i],options);
+    Sapo *sapo = new Sapo(synth_models[i], options);
     LinearSystemSet *synth_parameter_set = sapo->synthesize(synth_models[i]->getReachSet(),synth_models[i]->getParaSet(),synth_models[i]->getSpec());	// parameter synthesis
   }
   cout<<"\n";
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
 /*
   cout<<"FIGURE 5"<<endl;
-  Model* copter = new Quadcopter(true);
-  Sapo *sapo5 = new Sapo(copter,options);
+  Model* ll = new LL();
+  Sapo *sapo6 = new Sapo(ll, options);
 
   // Compute reach set with box template
-  cout<<"Model: "<<copter->getName()<<"\tReach steps: 300\t";
-  Flowpipe* flowpipe5 = sapo5->reach(copter->getReachSet(),300);
+  cout <<"Model: "<< ll->getName() <<"\tReach steps: 300\t";
+  Flowpipe* flowpipeC = sapo6->reach(ll->getReachSet(), 300);
 
   // Generate matlab script to plot flowpipe
-  char fig3a[] = "plotFigure3a.m";
-  flowpipe3a->plotRegionToFile(fig5,'w');
+  char figC[] = "plotFigureLL.m";
+  flowpipeC->plotProjToFile(3, 1, figC, 'b');
   // Set picture appearence
   ofstream matlab_script;
-  matlab_script.open (fig5, ios_base::app);
-  matlab_script<<"xlabel('s');\n";
-  matlab_script<<"ylabel('i');\n";
-  matlab_script<<"zlabel('r');\n";
-  matlab_script<<"axis([0 1 0 0.7 0 0.8]);\n";
-  matlab_script<<"view([74 23]);\n";
+  matlab_script.open (figC, ios_base::app);
+  matlab_script<<"xlabel('t');\n";
+  matlab_script<<"ylabel('h');\n";
+  //matlab_script<<"zlabel('r');\n";
+  //matlab_script<<"axis([0 1 0 0.7 0 0.8]);\n";
+  //matlab_script<<"view([74 23]);\n";
   matlab_script<<"grid on;";
   matlab_script.close();
-  cout<<fig5<<" generated\n"<<endl;
+  cout<<figC<<" generated\n"<<endl;
 */
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
+#if PHOS
+  cout<<"FIGURE 5"<<endl;
+  Model* ll = new Phosphorelay();
+  Sapo *sapo6 = new Sapo(ll, options);
 
+  // Compute reach set with box template
+  cout <<"Model: "<< ll->getName() <<"\tReach steps: 300\t";
+  Flowpipe* flowpipeC = sapo6->reach(ll->getReachSet(), 200);
+
+  // Generate matlab script to plot flowpipe
+  char figC[] = "plotPhos.m";
+  flowpipeC->plotProjToFile(2, 1, figC, 'b');
+  // Set picture appearence
+  ofstream matlab_script;
+  matlab_script.open (figC, ios_base::app);
+  matlab_script<<"xlabel('t');\n";
+  matlab_script<<"ylabel('x3');\n";
+  //matlab_script<<"zlabel('r');\n";
+  //matlab_script<<"axis([0 1 0 0.7 0 0.8]);\n";
+  //matlab_script<<"view([74 23]);\n";
+  matlab_script<<"grid on;";
+  matlab_script.close();
+  cout<<figC<<" generated\n"<<endl;
+#endif
+
+  #if QUADF
+    cout<<"FIGURE 5"<<endl;
+    Model* ll = new Quadcopter();
+    Sapo *sapo6 = new Sapo(ll, options);
+
+    // Compute reach set with box template
+    cout <<"Model: "<< ll->getName() <<"\tReach steps: 300\t";
+    Flowpipe* flowpipeC = sapo6->reach(ll->getReachSet(), 300);
+
+    // Generate matlab script to plot flowpipe
+    char figC[] = "plotQuad.m";
+    flowpipeC->plotProjToFile(13, 1, figC, 'b');
+    // Set picture appearence
+    ofstream matlab_script;
+    matlab_script.open (figC, ios_base::app);
+    matlab_script<<"xlabel('t');\n";
+    matlab_script<<"ylabel('w');\n";
+    //matlab_script<<"zlabel('r');\n";
+    //matlab_script<<"axis([0 1 0 0.7 0 0.8]);\n";
+    //matlab_script<<"view([74 23]);\n";
+    matlab_script<<"grid on;";
+    matlab_script.close();
+    cout<<figC<<" generated\n"<<endl;
+  #endif
+
+
+#if LKF
+  cout<<"FIGURE 5"<<endl;
+  Model* lk = new LotkaVolterra();
+  Sapo *sapo5 = new Sapo(lk,options);
+
+  // Compute reach set with box template
+  cout <<"Model: "<< lk->getName() <<"\tReach steps: 300\t";
+  Flowpipe* flowpipeLK = sapo5->reach(lk->getReachSet(),300);
+
+  // Generate matlab script to plot flowpipe
+  char figLK[] = "plotFigureLK.m";
+  flowpipeLK->plotProjToFile(0,1,figLK,'b');
+  // Set picture appearence
+  ofstream matlab_script;
+  matlab_script.open (figLK, ios_base::app);
+  matlab_script<<"xlabel('t');\n";
+  matlab_script<<"ylabel('x1');\n";
+  //matlab_script<<"zlabel('r');\n";
+  //matlab_script<<"axis([0 1 0 0.7 0 0.8]);\n";
+  //matlab_script<<"view([74 23]);\n";
+  matlab_script<<"grid on;";
+  matlab_script.close();
+  cout<<figLK<<" generated\n"<<endl;
+#endif
+
+#if ROSSLERF
+  cout<<"FIGURE 5"<<endl;
+  Model* lk = new Rossler();
+  Sapo *sapo5 = new Sapo(lk,options);
+
+  // Compute reach set with box template
+  cout <<"Model: "<< lk->getName() <<"\tReach steps: 300\t";
+  Flowpipe* flowpipeLK = sapo5->reach(lk->getReachSet(),300);
+
+  // Generate matlab script to plot flowpipe
+  char figLK[] = "plotFigureRoss.m";
+  flowpipeLK->plotProjToFile(1,1,figLK,'b');
+  // Set picture appearence
+  ofstream matlab_script;
+  matlab_script.open (figLK, ios_base::app);
+  matlab_script<<"xlabel('t');\n";
+  matlab_script<<"ylabel('y');\n";
+  //matlab_script<<"axis([0 1 0 0.7 0 0.8]);\n";
+  //matlab_script<<"view([74 23]);\n";
+  //matlab_script<<"grid on;";
+  matlab_script.close();
+  cout<<figLK<<" generated\n"<<endl;
+#endif
+
+#if SIRF
   cout<<"FIGURE 3a"<<endl;
   Model* sir3a = new SIR(true);
   Sapo *sapo3a = new Sapo(sir3a,options);
@@ -110,16 +219,13 @@ int main(int argc,char** argv){
   Flowpipe* flowpipe3a = sapo3a->reach(sir3a->getReachSet(),300);
 
   // Generate matlab script to plot flowpipe
-  char fig3a[] = "plotFigure3a.m";
-  flowpipe3a->plotRegionToFile(fig3a,'w');
-  // Set picture appearence
+  char fig3a[] = "plotSIR.m";
+  flowpipe3a->plotProjToFile(1,1,fig3a,'b');
   ofstream matlab_script;
+  // Set picture appearence
   matlab_script.open (fig3a, ios_base::app);
-  matlab_script<<"xlabel('s');\n";
+  matlab_script<<"xlabel('t');\n";
   matlab_script<<"ylabel('i');\n";
-  matlab_script<<"zlabel('r');\n";
-  matlab_script<<"axis([0 1 0 0.7 0 0.8]);\n";
-  matlab_script<<"view([74 23]);\n";
   matlab_script<<"grid on;";
   matlab_script.close();
   cout<<fig3a<<" generated\n"<<endl;
@@ -146,6 +252,7 @@ int main(int argc,char** argv){
   matlab_script<<"grid on;";
   matlab_script.close();
   cout<<fig3b<<" generated\n"<<endl;
+#endif
 
 /*
   cout<<"FIGURE 4a"<<endl;

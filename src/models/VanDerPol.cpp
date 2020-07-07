@@ -54,7 +54,7 @@
  	vector< double > offp (num_dirs,0);
  	vector< double > offm (num_dirs,0);
  	offp[0] = 0.01; offm[0] = 0;
- 	offp[1] = 2; offm[1] = -1.99;
+ 	offp[1] = 2; offm[1] = -1.97;
  	offp[2] = 10; offm[2] = 10;
  	offp[3] = 10; offm[3] = 10;
 

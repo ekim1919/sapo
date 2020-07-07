@@ -1,0 +1,430 @@
+Scanning dependencies of target sapo
+[  3%] Building CXX object CMakeFiles/sapo.dir/src/Bundle.cpp.o
+[  7%] Linking CXX executable bin/sapo
+[100%] Built target sapo
+TABLE 1
+
+FIGURE 5
+Model: Quadcopter	Reach steps: 300	Computing reach set...0
+0
+0.21
+0
+0
+0
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+-0.2
+0
+0
+0
+-1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+For: 0  Bernstein Comp :Max:0 ,  Min: 0
+For: 1  Bernstein Comp :Max:0 ,  Min: 0
+For: 2  Bernstein Comp :Max:0.21 ,  Min: -0.2
+For: 3  Bernstein Comp :Max:0 ,  Min: 0
+For: 4  Bernstein Comp :Max:0 ,  Min: 0
+For: 5  Bernstein Comp :Max:0.0728636 ,  Min: -0.0716018
+For: 6  Bernstein Comp :Max:1 ,  Min: -1
+For: 7  Bernstein Comp :Max:0 ,  Min: 0
+For: 8  Bernstein Comp :Max:0 ,  Min: 0
+For: 9  Bernstein Comp :Max:0 ,  Min: 0
+For: 10  Bernstein Comp :Max:0 ,  Min: 0
+For: 11  Bernstein Comp :Max:0 ,  Min: 0
+For: 12  Bernstein Comp :Max:0 ,  Min: 0
+For: 13  Bernstein Comp :Max:-0.0079 ,  Min: 0.008
+For: 14  Bernstein Comp :Max:0 ,  Min: 0
+For: 15  Bernstein Comp :Max:0 ,  Min: 0
+For: 16  Bernstein Comp :Max:0 ,  Min: 0
+For: 17  Bernstein Comp :Max:0.640801 ,  Min: -0.636432
+0
+0
+0.21
+0
+0
+100
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+-0.2
+0
+0
+100
+-1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+For: 0  Bernstein Comp :Max:0 ,  Min: 0
+For: 1  Bernstein Comp :Max:0 ,  Min: 0
+For: 2  Bernstein Comp :Max:2.1979 ,  Min: 1.812
+For: 3  Bernstein Comp :Max:0 ,  Min: 0
+For: 4  Bernstein Comp :Max:0 ,  Min: 0
+For: 5  Bernstein Comp :Max:177.077 ,  Min: 179.078
+For: 6  Bernstein Comp :Max:1 ,  Min: -1
+For: 7  Bernstein Comp :Max:0 ,  Min: 0
+For: 8  Bernstein Comp :Max:0 ,  Min: 0
+For: 9  Bernstein Comp :Max:0 ,  Min: 0
+For: 10  Bernstein Comp :Max:0 ,  Min: 0
+For: 11  Bernstein Comp :Max:0 ,  Min: 0
+For: 12  Bernstein Comp :Max:0 ,  Min: 0
+For: 13  Bernstein Comp :Max:-0.0079 ,  Min: 0.008
+For: 14  Bernstein Comp :Max:0 ,  Min: 0
+For: 15  Bernstein Comp :Max:0 ,  Min: 0
+For: 16  Bernstein Comp :Max:0 ,  Min: 0
+For: 17  Bernstein Comp :Max:90.1326 ,  Min: 89.9403
+New Offu: 0.21 New Offp  = -0.2
+0
+0
+0.21
+0
+0
+0.0728636
+1
+0
+0
+0
+0
+0
+0
+-0.0079
+0
+0
+0
+0
+0
+-0.2
+0
+0
+-0.0716018
+-1
+0
+0
+0
+0
+0
+0
+0.008
+0
+0
+0
+For: 0  Bernstein Comp :Max:0 ,  Min: 0
+For: 1  Bernstein Comp :Max:0 ,  Min: 0
+For: 2  Bernstein Comp :Max:0.210729 ,  Min: -0.200716
+For: 3  Bernstein Comp :Max:0 ,  Min: 0
+For: 4  Bernstein Comp :Max:0 ,  Min: 0
+For: 5  Bernstein Comp :Max:0.138264 ,  Min: -0.135872
+For: 6  Bernstein Comp :Max:1 ,  Min: -1
+For: 7  Bernstein Comp :Max:0 ,  Min: 0
+For: 8  Bernstein Comp :Max:0 ,  Min: 0
+For: 9  Bernstein Comp :Max:0 ,  Min: 0
+For: 10  Bernstein Comp :Max:0 ,  Min: 0
+For: 11  Bernstein Comp :Max:0 ,  Min: 0
+For: 12  Bernstein Comp :Max:0 ,  Min: 0
+For: 13  Bernstein Comp :Max:-0.0158 ,  Min: 0.016
+For: 14  Bernstein Comp :Max:0 ,  Min: 0
+For: 15  Bernstein Comp :Max:0 ,  Min: 0
+For: 16  Bernstein Comp :Max:0 ,  Min: 0
+For: 17  Bernstein Comp :Max:0.673865 ,  Min: -0.668925
+0
+0
+0.21
+0
+0
+0.640801
+1
+0
+0
+0
+0
+0
+0
+-0.0079
+0
+0
+0
+0
+0
+-0.2
+0
+0
+-0.636432
+-1
+0
+0
+0
+0
+0
+0
+0.008
+0
+0
+0
+For: 0  Bernstein Comp :Max:0 ,  Min: 0
+For: 1  Bernstein Comp :Max:0 ,  Min: 0
+For: 2  Bernstein Comp :Max:0.210716 ,  Min: -0.200729
+For: 3  Bernstein Comp :Max:0 ,  Min: 0
+For: 4  Bernstein Comp :Max:0 ,  Min: 0
+For: 5  Bernstein Comp :Max:0.146044 ,  Min: -0.128092
+For: 6  Bernstein Comp :Max:1 ,  Min: -1
+For: 7  Bernstein Comp :Max:0 ,  Min: 0
+For: 8  Bernstein Comp :Max:0 ,  Min: 0
+For: 9  Bernstein Comp :Max:0 ,  Min: 0
+For: 10  Bernstein Comp :Max:0 ,  Min: 0
+For: 11  Bernstein Comp :Max:0 ,  Min: 0
+For: 12  Bernstein Comp :Max:0 ,  Min: 0
+For: 13  Bernstein Comp :Max:-0.0158 ,  Min: 0.016
+For: 14  Bernstein Comp :Max:0 ,  Min: 0
+For: 15  Bernstein Comp :Max:0 ,  Min: 0
+For: 16  Bernstein Comp :Max:0 ,  Min: 0
+For: 17  Bernstein Comp :Max:0.67343 ,  Min: -0.66936
+New Offu: 0.210716 New Offp  = -0.200729
+0
+0
+0.210716
+0
+0
+0.138264
+1
+0
+0
+0
+0
+0
+0
+-0.0158
+0
+0
+0
+0
+0
+-0.200729
+0
+0
+-0.135872
+-1
+0
+0
+0
+0
+0
+0
+0.016
+0
+0
+0
+For: 0  Bernstein Comp :Max:0 ,  Min: 0
+For: 1  Bernstein Comp :Max:0 ,  Min: 0
+For: 2  Bernstein Comp :Max:0.212099 ,  Min: -0.202087
+For: 3  Bernstein Comp :Max:0 ,  Min: 0
+For: 4  Bernstein Comp :Max:0 ,  Min: 0
+For: 5  Bernstein Comp :Max:0.196927 ,  Min: -0.193524
+For: 6  Bernstein Comp :Max:1 ,  Min: -1
+For: 7  Bernstein Comp :Max:0 ,  Min: 0
+For: 8  Bernstein Comp :Max:0 ,  Min: 0
+For: 9  Bernstein Comp :Max:0 ,  Min: 0
+For: 10  Bernstein Comp :Max:0 ,  Min: 0
+For: 11  Bernstein Comp :Max:0 ,  Min: 0
+For: 12  Bernstein Comp :Max:0 ,  Min: 0
+For: 13  Bernstein Comp :Max:-0.0236928 ,  Min: 0.0239927
+For: 14  Bernstein Comp :Max:0 ,  Min: 0
+For: 15  Bernstein Comp :Max:0 ,  Min: 0
+For: 16  Bernstein Comp :Max:0 ,  Min: 0
+For: 17  Bernstein Comp :Max:0.703883 ,  Min: -0.698436
+0
+0
+0.210716
+0
+0
+0.67343
+1
+0
+0
+0
+0
+0
+0
+-0.0158
+0
+0
+0
+0
+0
+-0.200729
+0
+0
+-0.66936
+-1
+0
+0
+0
+0
+0
+0
+0.016
+0
+0
+0
+For: 0  Bernstein Comp :Max:0 ,  Min: 0
+For: 1  Bernstein Comp :Max:0 ,  Min: 0
+For: 2  Bernstein Comp :Max:0.212077 ,  Min: -0.202109
+For: 3  Bernstein Comp :Max:0 ,  Min: 0
+For: 4  Bernstein Comp :Max:0 ,  Min: 0
+For: 5  Bernstein Comp :Max:0.203932 ,  Min: -0.186519
+For: 6  Bernstein Comp :Max:1 ,  Min: -1
+For: 7  Bernstein Comp :Max:0 ,  Min: 0
+For: 8  Bernstein Comp :Max:0 ,  Min: 0
+For: 9  Bernstein Comp :Max:0 ,  Min: 0
+For: 10  Bernstein Comp :Max:0 ,  Min: 0
+For: 11  Bernstein Comp :Max:0 ,  Min: 0
+For: 12  Bernstein Comp :Max:0 ,  Min: 0
+For: 13  Bernstein Comp :Max:-0.0236928 ,  Min: 0.0239927
+For: 14  Bernstein Comp :Max:0 ,  Min: 0
+For: 15  Bernstein Comp :Max:0 ,  Min: 0
+For: 16  Bernstein Comp :Max:0 ,  Min: 0
+For: 17  Bernstein Comp :Max:0.703061 ,  Min: -0.699258
+New Offu: 0.212077 New Offp  = -0.202109
+0
+0
+0.212077
+0
+0
+0.196927
+1
+0
+0
+0
+0
+0
+0
+-0.0236928
+0
+0
+0
+0
+0
+-0.202109
+0
+0
+-0.193524
+-1
+0
+0
+0
+0
+0
+0
+0.0239927
+0
+0
+0
+For: 0  Bernstein Comp :Max:0 ,  Min: 0
+For: 1  Bernstein Comp :Max:0 ,  Min: 0
+For: 2  Bernstein Comp :Max:0.214047 ,  Min: -0.204044
+For: 3  Bernstein Comp :Max:0 ,  Min: 0
+For: 4  Bernstein Comp :Max:0 ,  Min: 0
+For: 5  Bernstein Comp :Max:0.249509 ,  Min: -0.245202
+For: 6  Bernstein Comp :Max:1 ,  Min: -1
+For: 7  Bernstein Comp :Max:0 ,  Min: 0
+For: 8  Bernstein Comp :Max:0 ,  Min: 0
+For: 9  Bernstein Comp :Max:0 ,  Min: 0
+For: 10  Bernstein Comp :Max:0 ,  Min: 0
+For: 11  Bernstein Comp :Max:0 ,  Min: 0
+For: 12  Bernstein Comp :Max:0 ,  Min: 0
+For: 13  Bernstein Comp :Max:-0.0315721 ,  Min: 0.0319716
+For: 14  Bernstein Comp :Max:0 ,  Min: 0
+For: 15  Bernstein Comp :Max:0 ,  Min: 0
+For: 16  Bernstein Comp :Max:0 ,  Min: 0
+For: 17  Bernstein Comp :Max:0.731149 ,  Min: -0.725252
+0
+0
+0.212077
+0
+0
+0.703061
+1
+0
+0
+0
+0
+0
+0
+-0.0236928
+0
+0
+0
+0
+0
+-0.202109
+0
+0
+-0.699258
+-1
+0
+0
+0
+0
+0
+0
+0.0239927
+0
+0
+0
+For: 0  Bernstein Comp :Max:0 ,  Min: 0
+For: 1  Bernstein Comp :Max:0 ,  Min: 0
+For: 2  Bernstein Comp :Max:0.214018 ,  Min: -0.204073
+For: 3  Bernstein Comp :Max:0 ,  Min: 0
+For: 4  Bernstein Comp :Max:0 ,  Min: 0
+For: 5  Bernstein Comp :Max:0.255818 ,  Min: -0.238892
+For: 6  Bernstein Comp :Max:1 ,  Min: -1
+For: 7  Bernstein Comp :Max:0 ,  Min: 0
+For: 8  Bernstein Comp :Max:0 ,  Min: 0
+For: 9  Bernstein Comp :Max:0 ,  Min: 0
+For: 10  Bernstein Comp :Max:0 ,  Min: 0
+For: 11  Bernstein Comp :Max:0 ,  Min: 0
+For: 12  Bernstein Comp :Max:0 ,  Min: 0
+For: 13  Bernstein Comp :Max:-0.0315721 ,  Min: 0.0319716
+For: 14  Bernstein Comp :Max:0 ,  Min: 0
+For: 15  Bernstein Comp :Max:0 ,  Min: 0
+For: 16  Bernstein Comp :Max:0 ,  Min: 0
+For: 17  Bernstein Comp :Max:0.729984 ,  Min: -0.726417
+New Offu: 0.214018 New Offp  = -0.204073
+Done.	Time taken:0.201791
+plotFigureC.m generated
+

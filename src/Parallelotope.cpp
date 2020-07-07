@@ -113,6 +113,7 @@ Parallelotope::Parallelotope(vector<lst> vars, LinearSystem *constr) {
 	vector< vector<double> > vertices;
 
 	// find base vertex
+	//
 	//build the linear system
 	ex q = this->vars[0];
 	lst LS;
@@ -153,7 +154,7 @@ Parallelotope::Parallelotope(vector<lst> vars, LinearSystem *constr) {
 		for(int i=0; i<this->dim; i++){
 			ex eq = 0;
 			for(int j=0; j<(signed)Lambda[i].size(); j++){
-				eq = eq + Lambda[i][j]*a[j];
+				eq = eq + Lambda[i][j]*a[j]; //linear expression of row i
 			}
 			if(i != k){
 				eq = eq == d[i];
@@ -173,7 +174,7 @@ Parallelotope::Parallelotope(vector<lst> vars, LinearSystem *constr) {
 	for(int i=0; i<this->dim; i++){
 		vector<double> gi;
 		for(int j=0; j<this->dim; j++){
-			gi.push_back( vertices[i+1][j] - vertices[0][j] );
+			gi.push_back( vertices[i+1][j] - vertices[0][j] ); //L_1 distance between base vertex and vertices
 		}
 		g.push_back(gi);
 	}
@@ -221,7 +222,7 @@ Parallelotope::Parallelotope(vector<lst> vars, LinearSystem *constr) {
 
 		// check dimension of versors
 		if((signed)u[i].size() != this->dim){
-			cout<<"Parallelotope::Parallelotope : dim and ui dimensions must agree";
+ 			cout<<"Parallelotope::Parallelotope : dim and ui dimensions must agree";
 			exit (EXIT_FAILURE);
 		}
 
@@ -229,7 +230,7 @@ Parallelotope::Parallelotope(vector<lst> vars, LinearSystem *constr) {
 		//double norm = euclidNorm(u[i]);
 		//vector< double > norm_versor;
 
-		for(int j=0; j<this->dim; j++){
+		for(int j=0; j<this->dim; j++){ //Done for every single variable slot in  versor as R^n array.
 			//norm_versor.push_back(u[i][j]/norm);
 			this->generator_function[j] = this->generator_function[j] + alpha[i]*beta[i]*this->u[i][j];
 		}
@@ -576,4 +577,3 @@ double Parallelotope::euclidNorm(vector<double> v){
 Parallelotope::~Parallelotope() {
 	// TODO Auto-generated destructor stub
 }
-

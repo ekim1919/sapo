@@ -46,6 +46,7 @@ Flowpipe* Sapo::reach(Bundle* initSet, int k){
 		//cout<<"Reach step "<<i<<"\n";
 
 		Bundle *X = flowpipe->get(i);	// get actual set
+		cout << "For " << i << " ";
 		X = X->transform(this->vars,this->dyns,this->reachControlPts,this->options.trans);	// transform it
 
 		if(this->options.decomp > 0){	// eventually decompose it

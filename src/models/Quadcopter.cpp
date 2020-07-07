@@ -49,7 +49,7 @@
    ex taupsi = -0.0003*psiI - 0.0006*psi - 0.0003*r;
 
    // System's dynamics
-   ex dpn = pn + (u*(2*pow(q0v,2) + 2*pow(q1v,2) - 1) - v*(2*q0v*q3v - 2*q1v*q2v ) + w*(2*q0v*q2v + 2*q1v*q3v ))*delta;
+   ex dpn = pn + (u*(2*pow(q0v,2) + 2*pow(q1v,2) - 1) - v*(2*q0v*q3v - 2*q1v*q2v ) + w*(2*q0v*q2v + 2*q1v*q3v ))*delta; //0.01 error
    ex dpe = pe + (v*(2*pow(q0v,2) + 2*pow(q2v,2) - 1) + u*(2*q0v*q3v + 2*q1v*q2v ) - w*(2*q0v*q1v - 2*q2v*q3v ))*delta;
    ex dh = h + (w*(2*pow(q0v,2) + 2*pow(q3v,2) - 1) - u*(2*q0v*q2v - 2*q1v*q3v ) + v*(2*q0v*q1v + 2*q2v*q3v ))*delta;
 
@@ -79,7 +79,7 @@
 
    ///// Parallelotope bundle for reachable set representation /////
    int num_dirs = 18;
-   int num_temp = 2;
+   int num_temp = 1;
 
    // Directions matrix
    vector< double > Li (dim_sys,0);
@@ -95,9 +95,9 @@
    vector< vector< int > > T (num_temp,Ti);
    for(int i=0; i<dim_sys; i++){
      T[0][i] = i;
-     T[1][i] = i;
+     //T[1][i] = i;
    }
-   T[1][5] = 17;
+   //T[1][5] = 17;
 
    vector< double > offp (num_dirs,0);
    vector< double > offm (num_dirs,0);
