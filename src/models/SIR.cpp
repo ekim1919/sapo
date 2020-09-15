@@ -73,8 +73,8 @@
 
    #if DEFAULT
 
-   int num_dirs = 3;		// number of bundle directions
-   int num_temps = 1;		// number of bundle templates
+   int num_dirs = 5;		// number of bundle directions
+   int num_temps = 3;		// number of bundle templates
 
    // Directions matrix
    vector< double > Li (dim_sys,0);
@@ -83,8 +83,10 @@
    L[0][0] = 1;
    L[1][1] = 1;
    L[2][2] = 1;
-   L[3][0] = 1; L[3][1] = 1;
-   L[4][0] = 1; L[4][2] = 1;
+   L[3][0] = 1; L[3][1] = 0.5;
+   L[4][0] = 0.5; L[4][2] = 0.5;
+
+   cout << "Multiple temps" << endl;
 
    #elif TWODTEST
 
@@ -138,13 +140,17 @@
    vector< int > Ti (dim_sys,0);
    vector< vector< int > > T (num_temps,Ti);
    T[0][0] = 0; T[0][1] = 1; T[0][2] = 2;
+   T[1][0] = 1; T[1][1] = 2; T[1][2] = 3;
+   T[2][0] = 2; T[2][1] = 3; T[2][2] = 4;
 
    // Offsets for the set of initial conditions
    vector< double > offp (num_dirs,0);
    vector< double > offm (num_dirs,0);
-   offp[0] = 0.8; offm[0] = -0.79;
-   offp[1] = 0.2; offm[1] = -0.19;
+   offp[0] = 0.8; offm[0] = -0.75;
+   offp[1] = 0.2; offm[1] = -0.15;
    offp[2] = 0.0001; offm[2] = -0.000099;
+   offp[3] = 1; offm[3] = 0;
+   offp[4] = 1; offm[4] = 0;
 
    #elif TWODTEST
 

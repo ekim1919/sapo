@@ -318,7 +318,7 @@ Bundle* Bundle::transform(lst vars, lst f, map< vector<int>,pair<lst,lst> > &con
 
 		for(int k=0; k<(signed)this->vars[0].nops(); k++){
 			subParatope.append(this->vars[0][k] == base_vertex[k]);
-			subParatope.append(this->vars[2][k] == lengths[k]);
+			subParatope.append(this->vars[2][k] == lengths[k]); //Calculating necessary subsitutions into q (base vertex) and \beta_i (versor length)
 		}
 
 		if(mode == 0){	// static mode
@@ -340,9 +340,9 @@ Bundle* Bundle::transform(lst vars, lst f, map< vector<int>,pair<lst,lst> > &con
 				lst sub, fog;
 
 				for(int k=0; k<(signed)vars.nops(); k++){
-					sub.append(vars[k] == genFun[k]); //Subsitution from generator functions. Each variable is subsituted with
+					sub.append(vars[k] == genFun[k]); //Subsitution from generator functions. Each variable is subsituted with correspoding variable from generator form.
 					//cout << sub[k] << '\n';
-				}
+				} //TODO Check if it's the same variable indices and compare the genFun
 
 				for(int k=0; k<(signed)vars.nops(); k++){
 					fog.append(f[k].subs(sub));
@@ -358,12 +358,18 @@ Bundle* Bundle::transform(lst vars, lst f, map< vector<int>,pair<lst,lst> > &con
 				// 1. Figure out the transformation in Sapo. Exact transformation to each
 				// 2.
 
-				BaseConverter *BC = new BaseConverter(this->vars[1],Lfog);
+				BaseConverter *BC = new BaseConverter(this->vars[1],Lfog); //var[1] = \alpha probs
 				actbernCoeffs = BC->getBernCoeffsMatrix();
 
-				pair<lst,lst> element (genFun,actbernCoeffs);
-				controlPts[key] = element;	// store the computed coefficients
+				pair<lst,lst> element (genFun,actbernCoeffs); //Hashed value with generator function as key.
+				controlPts[key] = element;	// store the computed coefficients	//
+				cout << "\n Column " << dirs_to_bound[j] << ": genFunArray" << "[";
+				for (int i = 0; i < this->dim; i++){
+					cout << genFun[i].subs(subParatope) << ", ";
+				}
 
+				cout << "] \n";
+				cout << "Computed Polynomial for Column: " <<  dirs_to_bound[j]  << " " << Lfog.subs(subParatope) << "\n";
 			} else {
 				//cout << "Already computed \n";
 				actbernCoeffs = controlPts[key].second;
@@ -379,14 +385,14 @@ Bundle* Bundle::transform(lst vars, lst f, map< vector<int>,pair<lst,lst> > &con
 				maxCoeffm = max(maxCoeffm,actCoeffm);
 			}
 
-			//cout << "For: " << dirs_to_bound[j] << "  Bernstein Comp :Max:" << maxCoeffp << " ,  Min: " << maxCoeffm << "\n";
+			cout << "\n Column " << dirs_to_bound[j] << ": (" << maxCoeffp << ", " << maxCoeffm << ") \n";
 
 			newDp[dirs_to_bound[j]] = min(newDp[dirs_to_bound[j]],maxCoeffp); //Take maximum computed offset
 			newDm[dirs_to_bound[j]] = min(newDm[dirs_to_bound[j]],maxCoeffm); //for both offp offu
 		}
 	}
 
-  cout << "New Offu: " << newDp[1] << " New Offp  = " << newDm[1] << '\n';
+    //cout << "New Offu: " << newDp[1] << " New Offp  = " << newDm[1] << '\n';
 	Bundle *res = new Bundle(this->vars,this->L,newDp,newDm,this->T);
 	if(mode == 0){
 		res = res->canonize();

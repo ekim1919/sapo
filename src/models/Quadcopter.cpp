@@ -79,7 +79,7 @@
 
    ///// Parallelotope bundle for reachable set representation /////
    int num_dirs = 18;
-   int num_temp = 1;
+   int num_temp = 2;
 
    // Directions matrix
    vector< double > Li (dim_sys,0);
@@ -95,9 +95,9 @@
    vector< vector< int > > T (num_temp,Ti);
    for(int i=0; i<dim_sys; i++){
      T[0][i] = i;
-     //T[1][i] = i;
+     T[1][i] = i;
    }
-   //T[1][5] = 17;
+   T[1][5] = 17;
 
    vector< double > offp (num_dirs,0);
    vector< double > offm (num_dirs,0);

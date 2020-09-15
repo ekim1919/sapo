@@ -1,6 +1,5 @@
 /**
- * @file Parallelotope.cpp
- * Represent and manipulate a parallelotope
+ * @file Parallelotope.cpp and manipulate a parallelotope
  *
  * @author Tommaso Dreossi <tommasodreossi@berkeley.edu>
  * @version 0.1
@@ -88,9 +87,9 @@ Parallelotope::Parallelotope(vector<lst> vars, LinearSystem *constr) {
 		exit (EXIT_FAILURE);
 	}
 
-	this->vars.push_back(vars[0]);
-	this->vars.push_back(vars[1]);
-	this->vars.push_back(vars[2]);
+	this->vars.push_back(vars[0]); //q
+	this->vars.push_back(vars[1]); //alpha
+	this->vars.push_back(vars[2]); //beta
 
 	// get the dimension of the parallelotope
 	this->dim = vars[0].nops();
@@ -169,15 +168,45 @@ Parallelotope::Parallelotope(vector<lst> vars, LinearSystem *constr) {
 
 	this->actual_base_vertex = vertices[0];
 
+
+
+	cout << "\n Base Vertex for Current Paratope: [";
+	for(int j=0; j<vertices[0].size(); j++){
+		cout<<vertices[0][j]<<", ";
+	}
+	cout<<"] \n";
+
+
+
 	// Compute the generators
 	vector< vector<double> > g;
 	for(int i=0; i<this->dim; i++){
 		vector<double> gi;
-		for(int j=0; j<this->dim; j++){
+	for(int j=0; j<this->dim; j++){
 			gi.push_back( vertices[i+1][j] - vertices[0][j] ); //L_1 distance between base vertex and vertices
 		}
 		g.push_back(gi);
 	}
+
+	cout << "Vertex List For Paratope: ";
+	for(int i=1; i<vertices.size(); i++){
+		cout << "[";
+		for(int j=0; j<vertices[i].size(); j++){
+			cout<<vertices[i][j]<<" ";
+		}
+		cout<<"] ";
+	}
+	cout <<"\n";
+
+	cout << "Vector List For Paratope: ";
+	for(int i=0; i<g.size(); i++){
+		cout << "[";
+		for(int j=0; j<g[i].size(); j++){
+			cout<<g[i][j]<<" ";
+		}
+		cout<<"] ";
+	}
+	cout <<"\n";
 
 	// Compute the generators lengths
 	vector< double > lengths;
@@ -234,6 +263,8 @@ Parallelotope::Parallelotope(vector<lst> vars, LinearSystem *constr) {
 			//norm_versor.push_back(u[i][j]/norm);
 			this->generator_function[j] = this->generator_function[j] + alpha[i]*beta[i]*this->u[i][j];
 		}
+		//Compare this with how you construct your polynomail in paralleltope.py b/c all the base vertex cals align on both sides.
+		//In Kaa, at least of the bounds are right. It's the other bound that is incorrect.
 	}
 
 	this->template_matrix = constr->getA();

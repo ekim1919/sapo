@@ -664,7 +664,6 @@ void BaseConverter::print(){
 		cout<<"\n";
 		}
 	}
-
 }
 
 /**

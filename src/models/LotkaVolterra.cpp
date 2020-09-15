@@ -40,7 +40,7 @@
  	///// Parallelotope bundle for reachable set representation /////
 
  	int num_dirs = 7;		// number of bundle directions
- 	int num_temps = 1;		// number of bundle templates
+ 	int num_temps = 3;		// number of bundle templates
 
  	// Directions matrix
  	vector< double > Li (dim_sys,0);
@@ -55,8 +55,8 @@
  	vector< int > Ti (dim_sys,0);
  	vector< vector< int > > T (num_temps,Ti);
  	T[0][0] = 0; T[0][1] = 1; T[0][2] = 2; T[0][3] = 3; T[0][4] = 4;
- 	//T[1][0] = 5; T[1][1] = 6; T[1][2] = 1; T[1][3] = 2; T[1][4] = 3;
- 	//T[2][0] = 5; T[2][1] = 6; T[2][2] = 2; T[2][3] = 3; T[2][4] = 4;
+ 	T[1][0] = 5; T[1][1] = 6; T[1][2] = 1; T[1][3] = 2; T[1][4] = 3;
+ 	T[2][0] = 5; T[2][1] = 6; T[2][2] = 2; T[2][3] = 3; T[2][4] = 4;
 
  	// Offsets for the set of initial conditions
  	vector< double > offp (num_dirs,0);

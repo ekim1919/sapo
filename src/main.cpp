@@ -9,10 +9,10 @@
  */
 
 #define PHOS 0
-#define SIRF 0
+#define SIRF 1
 #define LKF 0
 #define QUADF 0
-#define ROSSLERF 1
+#define ROSSLERF 0
 
 #include <stdio.h>
 #include <iostream>
@@ -141,16 +141,16 @@ int main(int argc, char** argv) {
 
     // Compute reach set with box template
     cout <<"Model: "<< ll->getName() <<"\tReach steps: 300\t";
-    Flowpipe* flowpipeC = sapo6->reach(ll->getReachSet(), 300);
+    Flowpipe* flowpipeC = sapo6->reach(ll->getReachSet(), 3);
 
-    // Generate matlab script to plot flowpipe
+    // Generate matlab script to plot flowpipe 
     char figC[] = "plotQuad.m";
     flowpipeC->plotProjToFile(13, 1, figC, 'b');
     // Set picture appearence
     ofstream matlab_script;
     matlab_script.open (figC, ios_base::app);
     matlab_script<<"xlabel('t');\n";
-    matlab_script<<"ylabel('w');\n";
+    matlab_script<<"ylabel('hI');\n";
     //matlab_script<<"zlabel('r');\n";
     //matlab_script<<"axis([0 1 0 0.7 0 0.8]);\n";
     //matlab_script<<"view([74 23]);\n";
@@ -176,7 +176,7 @@ int main(int argc, char** argv) {
   ofstream matlab_script;
   matlab_script.open (figLK, ios_base::app);
   matlab_script<<"xlabel('t');\n";
-  matlab_script<<"ylabel('x1');\n";
+  matlab_script<<"ylabel('x3');\n";
   //matlab_script<<"zlabel('r');\n";
   //matlab_script<<"axis([0 1 0 0.7 0 0.8]);\n";
   //matlab_script<<"view([74 23]);\n";
@@ -196,12 +196,12 @@ int main(int argc, char** argv) {
 
   // Generate matlab script to plot flowpipe
   char figLK[] = "plotFigureRoss.m";
-  flowpipeLK->plotProjToFile(1,1,figLK,'b');
+  flowpipeLK->plotProjToFile(2,1,figLK,'b');
   // Set picture appearence
   ofstream matlab_script;
   matlab_script.open (figLK, ios_base::app);
   matlab_script<<"xlabel('t');\n";
-  matlab_script<<"ylabel('y');\n";
+  matlab_script<<"ylabel('z');\n";
   //matlab_script<<"axis([0 1 0 0.7 0 0.8]);\n";
   //matlab_script<<"view([74 23]);\n";
   //matlab_script<<"grid on;";
@@ -210,6 +210,7 @@ int main(int argc, char** argv) {
 #endif
 
 #if SIRF
+  /*
   cout<<"FIGURE 3a"<<endl;
   Model* sir3a = new SIR(true);
   Sapo *sapo3a = new Sapo(sir3a,options);
@@ -225,11 +226,11 @@ int main(int argc, char** argv) {
   // Set picture appearence
   matlab_script.open (fig3a, ios_base::app);
   matlab_script<<"xlabel('t');\n";
-  matlab_script<<"ylabel('i');\n";
+  matlab_script<<"ylabel('r');\n";
   matlab_script<<"grid on;";
   matlab_script.close();
   cout<<fig3a<<" generated\n"<<endl;
-
+  */
 
   cout<<"FIGURE 3b"<<endl;
   Model* sir3b = new SIR(false);
@@ -237,18 +238,16 @@ int main(int argc, char** argv) {
 
   // Compute reach set with bundle template
   cout<<"Model: "<<sir3b->getName()<<"\tReach steps: 300\t";
-  Flowpipe* flowpipe3b = sapo3b->reach(sir3b->getReachSet(),300);
+  Flowpipe* flowpipe3b = sapo3b->reach(sir3b->getReachSet(),3);
 
   // Generate matlab script to plot flowpipe
   char fig3b[] = "plotFigure3b.m";
-  flowpipe3b->plotRegionToFile(fig3b,'w');
+  flowpipe3b->plotProjToFile(1,1,fig3b,'b');
   // Set picture appearence
+  ofstream matlab_script;
   matlab_script.open (fig3b, ios_base::app);
-  matlab_script<<"xlabel('s');\n";
+  matlab_script<<"xlabel('t');\n";
   matlab_script<<"ylabel('i');\n";
-  matlab_script<<"zlabel('r');\n";
-  matlab_script<<"axis([0 1 0 0.7 0 0.8]);\n";
-  matlab_script<<"view([74 23]);\n";
   matlab_script<<"grid on;";
   matlab_script.close();
   cout<<fig3b<<" generated\n"<<endl;
