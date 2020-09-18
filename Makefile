@@ -89,7 +89,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/local/Cellar/cmake/3.16.4/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/local/Cellar/cmake/3.18.2/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -628,6 +628,33 @@ src/models/Ebola.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sapo.dir/build.make CMakeFiles/sapo.dir/src/models/Ebola.cpp.s
 .PHONY : src/models/Ebola.cpp.s
 
+src/models/HarOsc.o: src/models/HarOsc.cpp.o
+
+.PHONY : src/models/HarOsc.o
+
+# target to build an object file
+src/models/HarOsc.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sapo.dir/build.make CMakeFiles/sapo.dir/src/models/HarOsc.cpp.o
+.PHONY : src/models/HarOsc.cpp.o
+
+src/models/HarOsc.i: src/models/HarOsc.cpp.i
+
+.PHONY : src/models/HarOsc.i
+
+# target to preprocess a source file
+src/models/HarOsc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sapo.dir/build.make CMakeFiles/sapo.dir/src/models/HarOsc.cpp.i
+.PHONY : src/models/HarOsc.cpp.i
+
+src/models/HarOsc.s: src/models/HarOsc.cpp.s
+
+.PHONY : src/models/HarOsc.s
+
+# target to generate assembly for a file
+src/models/HarOsc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sapo.dir/build.make CMakeFiles/sapo.dir/src/models/HarOsc.cpp.s
+.PHONY : src/models/HarOsc.cpp.s
+
 src/models/Influenza.o: src/models/Influenza.cpp.o
 
 .PHONY : src/models/Influenza.o
@@ -708,6 +735,33 @@ src/models/LotkaVolterra.s: src/models/LotkaVolterra.cpp.s
 src/models/LotkaVolterra.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sapo.dir/build.make CMakeFiles/sapo.dir/src/models/LotkaVolterra.cpp.s
 .PHONY : src/models/LotkaVolterra.cpp.s
+
+src/models/OscPart.o: src/models/OscPart.cpp.o
+
+.PHONY : src/models/OscPart.o
+
+# target to build an object file
+src/models/OscPart.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sapo.dir/build.make CMakeFiles/sapo.dir/src/models/OscPart.cpp.o
+.PHONY : src/models/OscPart.cpp.o
+
+src/models/OscPart.i: src/models/OscPart.cpp.i
+
+.PHONY : src/models/OscPart.i
+
+# target to preprocess a source file
+src/models/OscPart.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sapo.dir/build.make CMakeFiles/sapo.dir/src/models/OscPart.cpp.i
+.PHONY : src/models/OscPart.cpp.i
+
+src/models/OscPart.s: src/models/OscPart.cpp.s
+
+.PHONY : src/models/OscPart.s
+
+# target to generate assembly for a file
+src/models/OscPart.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sapo.dir/build.make CMakeFiles/sapo.dir/src/models/OscPart.cpp.s
+.PHONY : src/models/OscPart.cpp.s
 
 src/models/Phosphorelay.o: src/models/Phosphorelay.cpp.o
 
@@ -934,6 +988,9 @@ help:
 	@echo "... src/models/Ebola.o"
 	@echo "... src/models/Ebola.i"
 	@echo "... src/models/Ebola.s"
+	@echo "... src/models/HarOsc.o"
+	@echo "... src/models/HarOsc.i"
+	@echo "... src/models/HarOsc.s"
 	@echo "... src/models/Influenza.o"
 	@echo "... src/models/Influenza.i"
 	@echo "... src/models/Influenza.s"
@@ -943,6 +1000,9 @@ help:
 	@echo "... src/models/LotkaVolterra.o"
 	@echo "... src/models/LotkaVolterra.i"
 	@echo "... src/models/LotkaVolterra.s"
+	@echo "... src/models/OscPart.o"
+	@echo "... src/models/OscPart.i"
+	@echo "... src/models/OscPart.s"
 	@echo "... src/models/Phosphorelay.o"
 	@echo "... src/models/Phosphorelay.i"
 	@echo "... src/models/Phosphorelay.s"

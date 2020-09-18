@@ -64,8 +64,8 @@
      // Offsets for the set of initial conditions
      vector< double > offp (num_dirs,0);
      vector< double > offm (num_dirs,0);
-     offp[0] = 0.8; offm[0] = -0.79;
-     offp[1] = 0.2; offm[1] = -0.19;
+     offp[0] = 0.8; offm[0] = -0.75;
+     offp[1] = 0.2; offm[1] = -0.15;
      offp[2] = 0.0001; offm[2] = -0.000099;
 
      B = new Bundle(L,offp,offm,T);

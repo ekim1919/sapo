@@ -106,9 +106,11 @@ CMakeFiles/sapo.dir/src/main.cpp.o: include/STL/Until.h
 CMakeFiles/sapo.dir/src/main.cpp.o: include/Sapo.h
 CMakeFiles/sapo.dir/src/main.cpp.o: include/VarsGenerator.h
 CMakeFiles/sapo.dir/src/main.cpp.o: include/models/Ebola.h
+CMakeFiles/sapo.dir/src/main.cpp.o: include/models/HarOsc.h
 CMakeFiles/sapo.dir/src/main.cpp.o: include/models/Influenza.h
 CMakeFiles/sapo.dir/src/main.cpp.o: include/models/LL.h
 CMakeFiles/sapo.dir/src/main.cpp.o: include/models/LotkaVolterra.h
+CMakeFiles/sapo.dir/src/main.cpp.o: include/models/OscPart.h
 CMakeFiles/sapo.dir/src/main.cpp.o: include/models/Phosphorelay.h
 CMakeFiles/sapo.dir/src/main.cpp.o: include/models/Quadcopter.h
 CMakeFiles/sapo.dir/src/main.cpp.o: include/models/Rossler.h
@@ -142,6 +144,18 @@ CMakeFiles/sapo.dir/src/models/Ebola.cpp.o: include/STL/STL.h
 CMakeFiles/sapo.dir/src/models/Ebola.cpp.o: include/STL/Until.h
 CMakeFiles/sapo.dir/src/models/Ebola.cpp.o: include/VarsGenerator.h
 CMakeFiles/sapo.dir/src/models/Ebola.cpp.o: include/models/Ebola.h
+
+CMakeFiles/sapo.dir/src/models/HarOsc.cpp.o: src/models/HarOsc.cpp
+CMakeFiles/sapo.dir/src/models/HarOsc.cpp.o: include/BaseConverter.h
+CMakeFiles/sapo.dir/src/models/HarOsc.cpp.o: include/Bundle.h
+CMakeFiles/sapo.dir/src/models/HarOsc.cpp.o: include/Common.h
+CMakeFiles/sapo.dir/src/models/HarOsc.cpp.o: include/LinearSystem.h
+CMakeFiles/sapo.dir/src/models/HarOsc.cpp.o: include/LinearSystemSet.h
+CMakeFiles/sapo.dir/src/models/HarOsc.cpp.o: include/Model.h
+CMakeFiles/sapo.dir/src/models/HarOsc.cpp.o: include/Parallelotope.h
+CMakeFiles/sapo.dir/src/models/HarOsc.cpp.o: include/STL/STL.h
+CMakeFiles/sapo.dir/src/models/HarOsc.cpp.o: include/VarsGenerator.h
+CMakeFiles/sapo.dir/src/models/HarOsc.cpp.o: include/models/HarOsc.h
 
 CMakeFiles/sapo.dir/src/models/Influenza.cpp.o: src/models/Influenza.cpp
 CMakeFiles/sapo.dir/src/models/Influenza.cpp.o: include/BaseConverter.h
@@ -180,6 +194,18 @@ CMakeFiles/sapo.dir/src/models/LotkaVolterra.cpp.o: include/Parallelotope.h
 CMakeFiles/sapo.dir/src/models/LotkaVolterra.cpp.o: include/STL/STL.h
 CMakeFiles/sapo.dir/src/models/LotkaVolterra.cpp.o: include/VarsGenerator.h
 CMakeFiles/sapo.dir/src/models/LotkaVolterra.cpp.o: include/models/LotkaVolterra.h
+
+CMakeFiles/sapo.dir/src/models/OscPart.cpp.o: src/models/OscPart.cpp
+CMakeFiles/sapo.dir/src/models/OscPart.cpp.o: include/BaseConverter.h
+CMakeFiles/sapo.dir/src/models/OscPart.cpp.o: include/Bundle.h
+CMakeFiles/sapo.dir/src/models/OscPart.cpp.o: include/Common.h
+CMakeFiles/sapo.dir/src/models/OscPart.cpp.o: include/LinearSystem.h
+CMakeFiles/sapo.dir/src/models/OscPart.cpp.o: include/LinearSystemSet.h
+CMakeFiles/sapo.dir/src/models/OscPart.cpp.o: include/Model.h
+CMakeFiles/sapo.dir/src/models/OscPart.cpp.o: include/Parallelotope.h
+CMakeFiles/sapo.dir/src/models/OscPart.cpp.o: include/STL/STL.h
+CMakeFiles/sapo.dir/src/models/OscPart.cpp.o: include/VarsGenerator.h
+CMakeFiles/sapo.dir/src/models/OscPart.cpp.o: include/models/OscPart.h
 
 CMakeFiles/sapo.dir/src/models/Phosphorelay.cpp.o: src/models/Phosphorelay.cpp
 CMakeFiles/sapo.dir/src/models/Phosphorelay.cpp.o: include/BaseConverter.h

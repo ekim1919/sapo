@@ -332,7 +332,7 @@ Bundle* Bundle::transform(lst vars, lst f, map< vector<int>,pair<lst,lst> > &con
 			key.push_back(dirs_to_bound[j]);
 
 			lst actbernCoeffs;
-
+ 
 			if( controlPts.count(key) == 0 || (!controlPts[key].first.is_equal(genFun)) ){	// check if the coefficients were already computed
 
 				// the combination parallelotope/direction to bound is not present in hash table
@@ -369,7 +369,7 @@ Bundle* Bundle::transform(lst vars, lst f, map< vector<int>,pair<lst,lst> > &con
 				}
 
 				cout << "] \n";
-				cout << "Computed Polynomial for Column: " <<  dirs_to_bound[j]  << " " << Lfog.subs(subParatope) << "\n";
+				cout << "Computed Polynomial for Column: " <<  dirs_to_bound[j]  << Lfog.subs(subParatope) << "\n";
 			} else {
 				//cout << "Already computed \n";
 				actbernCoeffs = controlPts[key].second;

@@ -310,9 +310,22 @@ CMakeFiles/sapo.dir/src/models/Ebola.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sapo.dir/src/models/Ebola.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/edwardkim/Work/sapo/src/models/Ebola.cpp -o CMakeFiles/sapo.dir/src/models/Ebola.cpp.s
 
+CMakeFiles/sapo.dir/src/models/HarOsc.cpp.o: CMakeFiles/sapo.dir/flags.make
+CMakeFiles/sapo.dir/src/models/HarOsc.cpp.o: src/models/HarOsc.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/edwardkim/Work/sapo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/sapo.dir/src/models/HarOsc.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sapo.dir/src/models/HarOsc.cpp.o -c /Users/edwardkim/Work/sapo/src/models/HarOsc.cpp
+
+CMakeFiles/sapo.dir/src/models/HarOsc.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sapo.dir/src/models/HarOsc.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/edwardkim/Work/sapo/src/models/HarOsc.cpp > CMakeFiles/sapo.dir/src/models/HarOsc.cpp.i
+
+CMakeFiles/sapo.dir/src/models/HarOsc.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sapo.dir/src/models/HarOsc.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/edwardkim/Work/sapo/src/models/HarOsc.cpp -o CMakeFiles/sapo.dir/src/models/HarOsc.cpp.s
+
 CMakeFiles/sapo.dir/src/models/Influenza.cpp.o: CMakeFiles/sapo.dir/flags.make
 CMakeFiles/sapo.dir/src/models/Influenza.cpp.o: src/models/Influenza.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/edwardkim/Work/sapo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/sapo.dir/src/models/Influenza.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/edwardkim/Work/sapo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/sapo.dir/src/models/Influenza.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sapo.dir/src/models/Influenza.cpp.o -c /Users/edwardkim/Work/sapo/src/models/Influenza.cpp
 
 CMakeFiles/sapo.dir/src/models/Influenza.cpp.i: cmake_force
@@ -325,7 +338,7 @@ CMakeFiles/sapo.dir/src/models/Influenza.cpp.s: cmake_force
 
 CMakeFiles/sapo.dir/src/models/LL.cpp.o: CMakeFiles/sapo.dir/flags.make
 CMakeFiles/sapo.dir/src/models/LL.cpp.o: src/models/LL.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/edwardkim/Work/sapo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/sapo.dir/src/models/LL.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/edwardkim/Work/sapo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/sapo.dir/src/models/LL.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sapo.dir/src/models/LL.cpp.o -c /Users/edwardkim/Work/sapo/src/models/LL.cpp
 
 CMakeFiles/sapo.dir/src/models/LL.cpp.i: cmake_force
@@ -338,7 +351,7 @@ CMakeFiles/sapo.dir/src/models/LL.cpp.s: cmake_force
 
 CMakeFiles/sapo.dir/src/models/LotkaVolterra.cpp.o: CMakeFiles/sapo.dir/flags.make
 CMakeFiles/sapo.dir/src/models/LotkaVolterra.cpp.o: src/models/LotkaVolterra.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/edwardkim/Work/sapo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/sapo.dir/src/models/LotkaVolterra.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/edwardkim/Work/sapo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/sapo.dir/src/models/LotkaVolterra.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sapo.dir/src/models/LotkaVolterra.cpp.o -c /Users/edwardkim/Work/sapo/src/models/LotkaVolterra.cpp
 
 CMakeFiles/sapo.dir/src/models/LotkaVolterra.cpp.i: cmake_force
@@ -349,9 +362,22 @@ CMakeFiles/sapo.dir/src/models/LotkaVolterra.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sapo.dir/src/models/LotkaVolterra.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/edwardkim/Work/sapo/src/models/LotkaVolterra.cpp -o CMakeFiles/sapo.dir/src/models/LotkaVolterra.cpp.s
 
+CMakeFiles/sapo.dir/src/models/OscPart.cpp.o: CMakeFiles/sapo.dir/flags.make
+CMakeFiles/sapo.dir/src/models/OscPart.cpp.o: src/models/OscPart.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/edwardkim/Work/sapo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/sapo.dir/src/models/OscPart.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sapo.dir/src/models/OscPart.cpp.o -c /Users/edwardkim/Work/sapo/src/models/OscPart.cpp
+
+CMakeFiles/sapo.dir/src/models/OscPart.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sapo.dir/src/models/OscPart.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/edwardkim/Work/sapo/src/models/OscPart.cpp > CMakeFiles/sapo.dir/src/models/OscPart.cpp.i
+
+CMakeFiles/sapo.dir/src/models/OscPart.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sapo.dir/src/models/OscPart.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/edwardkim/Work/sapo/src/models/OscPart.cpp -o CMakeFiles/sapo.dir/src/models/OscPart.cpp.s
+
 CMakeFiles/sapo.dir/src/models/Phosphorelay.cpp.o: CMakeFiles/sapo.dir/flags.make
 CMakeFiles/sapo.dir/src/models/Phosphorelay.cpp.o: src/models/Phosphorelay.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/edwardkim/Work/sapo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/sapo.dir/src/models/Phosphorelay.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/edwardkim/Work/sapo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/sapo.dir/src/models/Phosphorelay.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sapo.dir/src/models/Phosphorelay.cpp.o -c /Users/edwardkim/Work/sapo/src/models/Phosphorelay.cpp
 
 CMakeFiles/sapo.dir/src/models/Phosphorelay.cpp.i: cmake_force
@@ -364,7 +390,7 @@ CMakeFiles/sapo.dir/src/models/Phosphorelay.cpp.s: cmake_force
 
 CMakeFiles/sapo.dir/src/models/Quadcopter.cpp.o: CMakeFiles/sapo.dir/flags.make
 CMakeFiles/sapo.dir/src/models/Quadcopter.cpp.o: src/models/Quadcopter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/edwardkim/Work/sapo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/sapo.dir/src/models/Quadcopter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/edwardkim/Work/sapo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/sapo.dir/src/models/Quadcopter.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sapo.dir/src/models/Quadcopter.cpp.o -c /Users/edwardkim/Work/sapo/src/models/Quadcopter.cpp
 
 CMakeFiles/sapo.dir/src/models/Quadcopter.cpp.i: cmake_force
@@ -377,7 +403,7 @@ CMakeFiles/sapo.dir/src/models/Quadcopter.cpp.s: cmake_force
 
 CMakeFiles/sapo.dir/src/models/Rossler.cpp.o: CMakeFiles/sapo.dir/flags.make
 CMakeFiles/sapo.dir/src/models/Rossler.cpp.o: src/models/Rossler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/edwardkim/Work/sapo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/sapo.dir/src/models/Rossler.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/edwardkim/Work/sapo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/sapo.dir/src/models/Rossler.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sapo.dir/src/models/Rossler.cpp.o -c /Users/edwardkim/Work/sapo/src/models/Rossler.cpp
 
 CMakeFiles/sapo.dir/src/models/Rossler.cpp.i: cmake_force
@@ -390,7 +416,7 @@ CMakeFiles/sapo.dir/src/models/Rossler.cpp.s: cmake_force
 
 CMakeFiles/sapo.dir/src/models/SIR.cpp.o: CMakeFiles/sapo.dir/flags.make
 CMakeFiles/sapo.dir/src/models/SIR.cpp.o: src/models/SIR.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/edwardkim/Work/sapo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/sapo.dir/src/models/SIR.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/edwardkim/Work/sapo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/sapo.dir/src/models/SIR.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sapo.dir/src/models/SIR.cpp.o -c /Users/edwardkim/Work/sapo/src/models/SIR.cpp
 
 CMakeFiles/sapo.dir/src/models/SIR.cpp.i: cmake_force
@@ -403,7 +429,7 @@ CMakeFiles/sapo.dir/src/models/SIR.cpp.s: cmake_force
 
 CMakeFiles/sapo.dir/src/models/SIRp.cpp.o: CMakeFiles/sapo.dir/flags.make
 CMakeFiles/sapo.dir/src/models/SIRp.cpp.o: src/models/SIRp.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/edwardkim/Work/sapo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/sapo.dir/src/models/SIRp.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/edwardkim/Work/sapo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/sapo.dir/src/models/SIRp.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sapo.dir/src/models/SIRp.cpp.o -c /Users/edwardkim/Work/sapo/src/models/SIRp.cpp
 
 CMakeFiles/sapo.dir/src/models/SIRp.cpp.i: cmake_force
@@ -416,7 +442,7 @@ CMakeFiles/sapo.dir/src/models/SIRp.cpp.s: cmake_force
 
 CMakeFiles/sapo.dir/src/models/VanDerPol.cpp.o: CMakeFiles/sapo.dir/flags.make
 CMakeFiles/sapo.dir/src/models/VanDerPol.cpp.o: src/models/VanDerPol.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/edwardkim/Work/sapo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/sapo.dir/src/models/VanDerPol.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/edwardkim/Work/sapo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/sapo.dir/src/models/VanDerPol.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sapo.dir/src/models/VanDerPol.cpp.o -c /Users/edwardkim/Work/sapo/src/models/VanDerPol.cpp
 
 CMakeFiles/sapo.dir/src/models/VanDerPol.cpp.i: cmake_force
@@ -447,9 +473,11 @@ sapo_OBJECTS = \
 "CMakeFiles/sapo.dir/src/main.cpp.o" \
 "CMakeFiles/sapo.dir/src/models/BestFit.cpp.o" \
 "CMakeFiles/sapo.dir/src/models/Ebola.cpp.o" \
+"CMakeFiles/sapo.dir/src/models/HarOsc.cpp.o" \
 "CMakeFiles/sapo.dir/src/models/Influenza.cpp.o" \
 "CMakeFiles/sapo.dir/src/models/LL.cpp.o" \
 "CMakeFiles/sapo.dir/src/models/LotkaVolterra.cpp.o" \
+"CMakeFiles/sapo.dir/src/models/OscPart.cpp.o" \
 "CMakeFiles/sapo.dir/src/models/Phosphorelay.cpp.o" \
 "CMakeFiles/sapo.dir/src/models/Quadcopter.cpp.o" \
 "CMakeFiles/sapo.dir/src/models/Rossler.cpp.o" \
@@ -478,9 +506,11 @@ bin/sapo: CMakeFiles/sapo.dir/src/VarsGenerator.cpp.o
 bin/sapo: CMakeFiles/sapo.dir/src/main.cpp.o
 bin/sapo: CMakeFiles/sapo.dir/src/models/BestFit.cpp.o
 bin/sapo: CMakeFiles/sapo.dir/src/models/Ebola.cpp.o
+bin/sapo: CMakeFiles/sapo.dir/src/models/HarOsc.cpp.o
 bin/sapo: CMakeFiles/sapo.dir/src/models/Influenza.cpp.o
 bin/sapo: CMakeFiles/sapo.dir/src/models/LL.cpp.o
 bin/sapo: CMakeFiles/sapo.dir/src/models/LotkaVolterra.cpp.o
+bin/sapo: CMakeFiles/sapo.dir/src/models/OscPart.cpp.o
 bin/sapo: CMakeFiles/sapo.dir/src/models/Phosphorelay.cpp.o
 bin/sapo: CMakeFiles/sapo.dir/src/models/Quadcopter.cpp.o
 bin/sapo: CMakeFiles/sapo.dir/src/models/Rossler.cpp.o
@@ -489,7 +519,7 @@ bin/sapo: CMakeFiles/sapo.dir/src/models/SIRp.cpp.o
 bin/sapo: CMakeFiles/sapo.dir/src/models/VanDerPol.cpp.o
 bin/sapo: CMakeFiles/sapo.dir/build.make
 bin/sapo: CMakeFiles/sapo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/edwardkim/Work/sapo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking CXX executable bin/sapo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/edwardkim/Work/sapo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Linking CXX executable bin/sapo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sapo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

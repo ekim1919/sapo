@@ -9,7 +9,9 @@
  */
 
 #define PHOS 0
-#define SIRF 1
+#define OSCPART 1
+#define HAROSC 0
+#define SIRF 0
 #define LKF 0
 #define QUADF 0
 #define ROSSLERF 0
@@ -28,7 +30,8 @@
 #include "Phosphorelay.h"
 #include "Quadcopter.h"
 #include "LL.h"
-
+#include "OscPart.h"
+#include "HarOsc.h"
 #include "SIRp.h"
 #include "Influenza.h"
 #include "Ebola.h"
@@ -133,6 +136,58 @@ int main(int argc, char** argv) {
   matlab_script.close();
   cout<<figC<<" generated\n"<<endl;
 #endif
+
+#if OSCPART
+  cout<<"FIGURE 5"<<endl;
+  Model* oscpart = new OscPart();
+  Sapo *sapo6 = new Sapo(oscpart, options);
+
+  // Compute reach set with box template
+  cout <<"Model: "<< oscpart->getName() <<"\tReach steps: 300\t";
+  Flowpipe* flowpipeC = sapo6->reach(oscpart->getReachSet(), 20);
+
+  // Generate matlab script to plot flowpipe
+  char figC[] = "plotOscPart.m";
+  flowpipeC->plotProjToFile(0, 1, figC, 'b');
+  // Set picture appearence
+  ofstream matlab_script;
+  matlab_script.open (figC, ios_base::app);
+  matlab_script<<"xlabel('t');\n";
+  matlab_script<<"ylabel('x');\n";
+  //matlab_script<<"zlabel('r');\n";
+  //matlab_script<<"axis([0 1 0 0.7 0 0.8]);\n";
+  //matlab_script<<"view([74 23]);\n";
+  matlab_script<<"grid on;";
+  matlab_script.close();
+  cout<<figC<<" generated\n"<<endl;
+#endif
+
+#if HAROSC
+  cout<<"FIGURE 5"<<endl;
+  Model* harosc = new HarOsc();
+  Sapo *sapo6 = new Sapo(harosc, options);
+
+  // Compute reach set with box template
+  cout <<"Model: "<< harosc->getName() <<"\tReach steps: 300\t";
+  Flowpipe* flowpipeC = sapo6->reach(harosc->getReachSet(), 20);
+
+  // Generate matlab script to plot flowpipe
+  char figC[] = "plotHarOsc.m";
+  flowpipeC->plotProjToFile(0, 1, figC, 'b');
+  // Set picture appearence
+  ofstream matlab_script;
+  matlab_script.open (figC, ios_base::app);
+  matlab_script<<"xlabel('t');\n";
+  matlab_script<<"ylabel('x');\n";
+  //matlab_script<<"zlabel('r');\n";
+  //matlab_script<<"axis([0 1 0 0.7 0 0.8]);\n";
+  //matlab_script<<"view([74 23]);\n";
+  matlab_script<<"grid on;";
+  matlab_script.close();
+  cout<<figC<<" generated\n"<<endl;
+#endif
+
+
 
   #if QUADF
     cout<<"FIGURE 5"<<endl;
